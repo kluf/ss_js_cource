@@ -1,18 +1,40 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>task #1</title>
-    <link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-    <div id="main">
-        <form action="">
-            <label for="addTask">Task name</label>
-            <input type="text" name="addTask" id="addTask">
-            <button id="addTaskButton">Add new task</button>
-        </form>
-        <div id="error">Fill in the field</div>
-    </div>
-    <script type="text/javascript" src="list.js"></script>
-</body>
+    <head>
+        <title>task #1</title>
+        <link rel="stylesheet" type="text/css" href="style.css">
+    </head>
+    <body>
+        <div class="container">
+            <div id="main">
+                <label for="addTask">Task name</label>
+                <input type="text" name="addTask" class="addTask">
+                <button class="addTaskButton">Add new task</button>
+                <div class="error">Fill in the field</div>
+            </div>
+            <div id="main1">
+                <label for="addTask">Task name</label>
+                <input type="text" name="addTask" class="addTask">
+                <button class="addTaskButton">Add new task</button>
+                <div class="error">Fill in the field</div>
+            </div>
+            <div id="main2">
+                <label for="addTask">Task name</label>
+                <input type="text" name="addTask" class="addTask">
+                <button class="addTaskButton">Add new task</button>
+                <div class="error">Fill in the field</div>
+            </div>
+            <div id="main3">
+                <label for="addTask">Task name</label>
+                <input type="text" name="addTask" class="addTask">
+                <button class="addTaskButton">Add new task</button>
+                <div class="error">Fill in the field</div>
+            </div>
+        </div>
+        <script type="text/javascript" src="list.js"></script>
+        <script type="text/javascript">ListManager.initialize(document.querySelector('#main'));</script>
+        <script type="text/javascript">ListManager.initialize(document.querySelector('#main1'));</script>
+        <script type="text/javascript">ListManager.initialize(document.querySelector('#main2'));</script>
+        <script type="text/javascript">ListManager.initialize(document.querySelector('#main3'));</script>
+    </body>
 </html>

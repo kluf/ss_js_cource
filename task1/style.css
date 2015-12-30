@@ -1,4 +1,4 @@
-.close {
+.container .close {
     padding: 2px 7px;
     color: #fff;
     background: #b00;
@@ -6,22 +6,24 @@
     cursor: pointer;
     float: right;
 }
-.task {
+.container .task {
     padding: 8px;
     border: 1px dotted #ccc;
     width: auto;
 }
-#main form {
+.container > div {
     width: 40%;
     margin: 0 30%;
+    border-bottom: 1px solid #fa0;
+    padding: 10px;
 }
-#addTask, #addTaskButton {
+.container .addTask,.container .addTaskButton {
     width: 40%;
 }
-#error {
+.container .error {
     display: none;
 }
-#error.visible {
+.container .error.visible {
     display: block;
     text-align: center;
     border: 1px dashed #e17;
