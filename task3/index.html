@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>task #1</title>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="style.css">
+        <script src="http://code.jquery.com/jquery-1.12.0.min.js"></script>
+    </head>
+    <body>
+        <div class="container">
+            <div class="form-group" id="main">
+                <label for="addTask">Fill in task name</label>
+                <input class="form-control addTask" id="addTask" placeholder="Task name">
+                <button type="button" class="btn btn-success">Add new task</button>
+                <div class="alert alert-danger" role="alert">Field must contain at least 1 not-numeric character</div>
+                <ul class="list-group"></ul>
+            </div>
+            <div class="form-group" id="main1">
+                <label for="addTask">Fill in task name</label>
+                <input class="form-control addTask" id="addTask" placeholder="Task name">
+                <button type="button" class="btn btn-success">Add new task</button>
+                <div class="alert alert-danger" role="alert">Field must contain at least 1 not-numeric character</div>
+                <ul class="list-group"></ul>
+            </div>
+        </div>
+        <script type="text/javascript" src="list.js"></script>
+        <script type="text/javascript">ListManager.initialize($('#main'));</script>
+        <script type="text/javascript">ListManager.initialize($('#main1'));</script>
+    </body>
+</html>

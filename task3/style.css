@@ -1,0 +1,13 @@
+.container .alert-danger {
+    display: none;
+}
+.container .alert-danger.visible {
+    display: block;
+}
+.form-group label, .form-group .addTask, .form-group .btn-success {
+    display: inline-block;
+}
+.form-group {padding-top: 10px;}
+.form-group label, {width: 20%;}
+.form-group .addTask {width: 60%; margin-bottom: 10px;}
+.form-group .btn-success {width: 20%;}
