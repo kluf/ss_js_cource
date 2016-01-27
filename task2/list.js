@@ -11,19 +11,13 @@ var ListManager =(function() {
         addTaskButton = $(rootElSelector).find('.btn-success');
         listElement = $(rootElSelector).find('.list-group');
     };
-    function verifyInput(val) {
-        var regExp = /^([A-Za-z]+)\d?/;
-        return regExp.test(val);
-    };
     function fieldContainTheText(cb){
-        //emulating server delay for future task
-        setTimeout(function() {
-            if (verifyInput(addTaskEl.val())) {
-                appendDiv();
-            } else {
-                errorDivEl.addClass('visible');
-            }
-        }, 500);
+        var regExp = /^([A-Za-z]+)\d?/;
+        if (regExp.test(addTaskEl.val())) {
+            appendDiv();
+        } else {
+            errorDivEl.addClass('visible');
+        }
     };
     function deleteTask(e) {
         e.currentTarget.closest('.list-group-item').remove();
