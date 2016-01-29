@@ -12,19 +12,19 @@
                 <label for="addTask">Fill in task name</label>
                 <input class="form-control addTask" id="addTask" placeholder="Task name">
                 <button type="button" class="btn btn-success">Add new task</button>
-                <div class="alert alert-danger" role="alert">Field must contain at least 1 not-numeric character</div>
+                <div class="alert alert-danger" role="alert">Field must start with an alphabetical character and contain at lest 3 characters in general</div>
                 <ul class="list-group"></ul>
             </div>
             <div class="form-group" id="main1">
                 <label for="addTask">Fill in task name</label>
                 <input class="form-control addTask" id="addTask" placeholder="Task name">
                 <button type="button" class="btn btn-success">Add new task</button>
-                <div class="alert alert-danger" role="alert">Field must contain at least 1 not-numeric character</div>
+                <div class="alert alert-danger" role="alert">Field must start with an alphabetical character and contain at lest 3 characters in general</div>
                 <ul class="list-group"></ul>
             </div>
         </div>
         <script type="text/javascript" src="list.js"></script>
-        <script type="text/javascript">ListManager.initialize($('#main'));</script>
-        <script type="text/javascript">ListManager.initialize($('#main1'));</script>
+        <script type="text/javascript">ListManager.initialize('#main');</script>
+        <script type="text/javascript">ListManager.initialize('#main1');</script>
     </body>
 </html>

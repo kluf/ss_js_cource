@@ -3,39 +3,40 @@ var ListManager =(function() {
     var VISIBLE_CLASS_SELECTOR = 'visible';
     var CLOSE_CLASS = 'close';
     var LIST_ITEM_CLASS = 'list-group-item';
-
+    var FORM_GROUP_TASK = 'form-group';
+    var VISIBLE = 'visible';
     function setElements(rootElSelector) {
         mainDivEl = $(rootElSelector);
-        addTaskEl = $(rootElSelector).find('.addTask');
-        errorDivEl = $(rootElSelector).find('.alert-danger');
-        addTaskButton = $(rootElSelector).find('.btn-success');
-        listElement = $(rootElSelector).find('.list-group');
+        addTaskEl = mainDivEl.find('.addTask');
+        errorDivEl = mainDivEl.find('.alert-danger');
+        addTaskButton = mainDivEl.find('.btn-success');
+        listElement = mainDivEl.find('.list-group');
     };
-    function fieldContainTheText(cb){
-        var regExp = /^([A-Za-z]+)\d?/;
+    function fieldContainTheText(){
+        var regExp = /^(([A-Za-z]+)\d?){3,}/;
         if (regExp.test(addTaskEl.val())) {
             appendDiv();
         } else {
-            errorDivEl.addClass('visible');
+            errorDivEl.addClass(VISIBLE);
         }
     };
     function deleteTask(e) {
-        e.currentTarget.closest('.list-group-item').remove();
+        e.currentTarget.closest('.' + LIST_ITEM_CLASS).remove();
     };
     function appendDiv() {
-        errorDivEl.removeClass('visible');
+        errorDivEl.removeClass(VISIBLE);
         listElement.append('<li class='+LIST_ITEM_CLASS+'>'+addTaskEl.val()+ '<button type="button" class="'+CLOSE_CLASS+'" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button></li>');
         addTaskEl.val('');
         addTaskEl.focus();
     }
     function addStyledTaskDiv(e) {
-        setElements(e.target.closest('.form-group'));
+        setElements(e.target.closest('.' + FORM_GROUP_TASK));
         fieldContainTheText(appendDiv);
     };
     return {
         initialize: function(rootElSelector) {
-            rootElSelector.find('.btn-success').bind('click', addStyledTaskDiv);
-            $(document).on('click', '.close', deleteTask);
+            $(rootElSelector).find('.btn-success').bind('click', addStyledTaskDiv);
+            $(document).on('click', rootElSelector + " ." + CLOSE_CLASS, deleteTask);
         }
     }
 }());

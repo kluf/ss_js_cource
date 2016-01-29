@@ -7,7 +7,7 @@ var finalhandler = require('finalhandler');
 var qs = require('querystring');
 
 http.createServer(function(req, res) {
-    var regExp = /^([A-Za-z]+)\d?/;
+    var regExp = /^(([A-Za-z]+)\d?){3,}/;
     if (req.url.indexOf('/validate') !== -1) {
         var body = '', postData = '';
         req.on('data', function(data) {
