@@ -2,7 +2,7 @@ var http = require('http');
 var port = 3000;
 var fs = require('fs');
 var serveStatic = require('serve-static');
-var serve = serveStatic("./");
+var serve = serveStatic("public/");
 var finalhandler = require('finalhandler');
 var qs = require('querystring');
 
